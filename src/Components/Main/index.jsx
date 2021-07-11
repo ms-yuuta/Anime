@@ -2,6 +2,7 @@ import styles from "src/Components/Main/Main.module.css";
 import { Answers } from "src/Components/Answers";
 import { Question } from "src/Components/Question";
 import { useCallback, useEffect, useState } from "react";
+import { Headline } from "src/Components/Headline/Headline";
 
 export const Main = () => {
   const SECTIONS = [
@@ -129,13 +130,16 @@ export const Main = () => {
   }, []);
 
   return (
-    <main className={styles.main}>
-      <Question question={question} />
-      <Answers
-        answers={answers}
-        displayNext={displayNext}
-        addArray={addArray}
-      />
-    </main>
+    <div>
+      <Headline />
+      <main className={styles.main}>
+        <Question question={question} />
+        <Answers
+          answers={answers}
+          displayNext={displayNext}
+          addArray={addArray}
+        />
+      </main>
+    </div>
   );
 };
