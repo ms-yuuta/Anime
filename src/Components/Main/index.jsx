@@ -106,7 +106,10 @@ export const Main = () => {
   useEffect(() => {
     if (isOpne) {
       const url = URL[array[0]][array[1]];
-      window.open(url, "_blank");
+      const isOpenTab = () => window.open(url, "_blank");
+      if (!isOpenTab()) {
+        window.location.href = url;
+      }
       setQuestion(SECTIONS[0].question);
       setAnswers(SECTIONS[0].answers);
       setArray([]);
