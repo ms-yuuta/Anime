@@ -6,8 +6,8 @@ export const Question = (props) => {
       <h1 className={styles.title}>{props.question}</h1>
 
       <p className={styles.description}>
-        Get started by editing{" "}
-        <code className={styles.code}>pages/index.js</code>
+        {/* Get started by editing{" "}
+        <code className={styles.code}>pages/index.js</code> */}
       </p>
     </div>
   );
