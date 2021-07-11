@@ -1,8 +1,19 @@
 .main {
-  padding: 5rem 0;
+  padding-top: 5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.nextVersion {
+  font-weight: lighter;
+  border: 1px solid white;
+  background-color: #adb8fa;
+  color: white;
+  padding: 3.5px;
+  border-radius: 8px;
+  /* font-size: 0.7rem; */
+  /* margin-left: 0.2rem; */
 }

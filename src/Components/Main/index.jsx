@@ -139,6 +139,9 @@ export const Main = () => {
           displayNext={displayNext}
           addArray={addArray}
         />
+        <p>
+          <span className={styles.nextVersion}>beta</span> coming soon....
+        </p>
       </main>
     </div>
   );
