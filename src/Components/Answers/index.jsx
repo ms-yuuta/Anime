@@ -1,6 +1,5 @@
 import styles from "src/Components/Answers/Answers.module.css";
 
-
 export const Answers = (props) => {
   return (
     <div className={styles.grid}>
