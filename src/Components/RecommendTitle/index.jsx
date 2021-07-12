@@ -1,6 +1,6 @@
-import styles from "src/Components/Headline/Headline.module.css";
+import styles from "src/Components/RecommendTitle/RecommendTitle.module.css";
 
-export const Headline = () => {
+export const RecommendTitle = () => {
   return (
     <div className={styles.header}>
       <h2 className = {styles.title}>

@@ -1,8 +1,8 @@
 import styles from "src/Components/Main/Main.module.css";
+import { useCallback, useEffect, useState } from "react";
 import { Answers } from "src/Components/Answers";
 import { Question } from "src/Components/Question";
-import { useCallback, useEffect, useState } from "react";
-import { Title } from "src/Components/Title";
+import { RecommendTitle } from "src/Components/RecommendTitle";
 
 export const Main = () => {
   const SECTIONS = [
@@ -131,7 +131,7 @@ export const Main = () => {
 
   return (
     <div>
-      <Title />
+      <RecommendTitle />
       <main className={styles.main}>
         <Question question={question} />
         <Answers

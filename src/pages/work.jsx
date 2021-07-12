@@ -1,7 +1,6 @@
 import styles from "src/Components/Answers/Answers.module.css";
 import { Footer } from "src/Components/Footer";
 import { Header } from "src/Components/Header";
-// import styles from "src/Components/Answers/Answers.module.css"
 import Link from "next/link";
 
 export default function Work() {
