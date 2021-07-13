@@ -27,7 +27,7 @@ export default function Work() {
   return (
     <div className={styles.container}>
       <Header />
-      <main className={styles.main}>
+      <main className={styles.workPage}>
         <h2>2018 winter-season</h2>
         <p>total: {work.length}</p>
         <ol>

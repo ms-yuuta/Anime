@@ -1,22 +1,32 @@
 import styles from "src/styles/Home.module.css";
-import { Footer } from "src/Components/Footer";
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "src/Components/Header";
-import Link from "next/link";
+import { Footer } from "src/Components/Footer";
 
 export default function Index() {
+
+  const [quote, setQuote] = useState({});
+
+  const getFamousQuote = useCallback(async() => {
+    const res = await fetch("https://animechan.vercel.app/api/random");
+    const json = await res.json();
+    console.log(json);
+    setQuote(json);
+  },[])
+
+  useEffect(()=> {
+    getFamousQuote();
+  },[])
+
   return (
     <div className={styles.container}>
       <Header />
-      <header className={styles.header}>
-        <h1>welcome to my page</h1>
-        <Link href="/recommend">
-          <a>anime judge</a>
-        </Link>
-        <Link href="/work">
-          <a className={styles.api}>Anime API</a>
-        </Link>
-      </header>
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <div className={styles.quote}>
+          <h1>{quote.quote}</h1>
+          <p className={styles.quoteInfo}>{"chara : " + quote.character + "," }　{" "} {"title : " + quote.anime}</p>
+        </div>
+      </main>
       <Footer />
     </div>
   );

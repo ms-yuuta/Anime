@@ -10,19 +10,26 @@
 
 .main {
   min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header {
-  display: block;
-  
+.quote {
+  max-width: 1000px;
 }
 
-.api {
-  margin-left: 1rem;
+.quoteInfo {
+  font-size: larger;
+  font-weight: 400;
 }
 
 .twitter {
   background-color: rgb(136, 199, 255);
   border-radius: 5px;
   color: azure;
+}
+
+.wordPage {
+  min-height: 80vh;
 }
