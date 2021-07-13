@@ -5,7 +5,7 @@ export const Headline = () => {
   return(
     <header className={styles.header}>
       <Link href="/">
-        <a className={styles.logo}>4animer</a>
+        <a className={styles.logo}>4animater</a>
       </Link>
       <div className={styles.links}>
         <Link href="/recommend">
