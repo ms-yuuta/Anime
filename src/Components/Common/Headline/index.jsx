@@ -12,6 +12,9 @@ export const Headline = () => {
       <Link href="/">
         <a className={styles.logo}>4animater</a>
       </Link>
+      <p>
+        <span className={styles.nextVersion}>beta</span>
+      </p>
       <div className={styles.links}>
         {LINKS.map((link) => {
           return (

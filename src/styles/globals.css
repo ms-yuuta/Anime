@@ -19,3 +19,16 @@ a:hover {
 * {
   box-sizing: border-box;
 }
+
+span {
+  margin-left: 0.8rem;
+}
+
+.nextVersion {
+  /* font-weight: ; */
+  /* border: 1px solid #eaeaea; */
+  background-color: #c7d0ff;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}

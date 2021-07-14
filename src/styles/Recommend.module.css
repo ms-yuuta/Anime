@@ -6,14 +6,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.nextVersion {
-  font-weight: lighter;
-  border: 1px solid white;
-  background-color: #adb8fa;
-  color: white;
-  padding: 3.5px;
-  border-radius: 8px;
-  /* font-size: 0.7rem; */
-  /* margin-left: 0.2rem; */
-}

@@ -31,7 +31,7 @@ export default function Work() {
             <option value="2018">2018</option>
             <option value="2019">2019</option>
           </select>
-          <button onClick={handleDisplay}>Show</button>
+          <button className={styles.button} onClick={handleDisplay}>Show</button>
         </div>
         {isShow ? <WorkList year = {year}/> : null}
       </main>
