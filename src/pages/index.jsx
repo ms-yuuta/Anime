@@ -1,15 +1,14 @@
 import styles from "src/styles/Home.module.css";
-import { Footer } from "src/Components/Footer";
-import { Header } from "src/Components/Header";
-import { Main } from "src/Components/Main";
+import { Header } from "src/Components/Common/Header";
+import { Quote } from "src/Components/Quote";
 
-export default function Home() {
-
+export default function Index() {
   return (
     <div className={styles.container}>
       <Header />
-      <Main />
-      <Footer />
+      <main className={styles.main}>
+        <Quote />
+      </main>
     </div>
   );
 }

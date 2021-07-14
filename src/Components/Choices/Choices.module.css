@@ -20,10 +20,7 @@
   width: 45%;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
+.card:hover {
   border-color: #0070f3;
 }
 

@@ -1,0 +1,33 @@
+.header {
+  height: 100px;
+  padding-left: 150px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.api {
+  margin-left: 2rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+}
+
+.links {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nextVersion {
+  /* font-weight: ; */
+  /* border: 1px solid #eaeaea; */
+  background-color: #c7d0ff;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
