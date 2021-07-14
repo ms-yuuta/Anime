@@ -7,7 +7,7 @@ export const WorkList = (props) => {
 
   const getWork = useCallback(async () => {
     const res = await fetch(
-      "https://api.moemoe.tokyo/anime/v1/master/" + props.year + "/4"
+      "https://api.moemoe.tokyo/anime/v1/master/" + props.year + "/1"
     );
     const json = await res.json();
     setWork(json);
