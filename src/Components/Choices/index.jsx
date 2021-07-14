@@ -1,4 +1,4 @@
-import styles from "src/Components/Answers/Answers.module.css";
+import styles from "src/Components/Choices/Choices.module.css";
 
 export const Answers = (props) => {
   return (

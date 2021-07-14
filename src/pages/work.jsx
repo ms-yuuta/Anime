@@ -1,46 +1,40 @@
-import styles from "src/styles/Home.module.css";
-import { Footer } from "src/Components/Footer";
-import { Header } from "src/Components/Header";
-import Link from "next/link";
+import styles from "src/styles/Work.module.css";
 import { useCallback, useState } from "react";
+import { Header } from "src/Components/Common/Header";
+import { WorkList } from "src/Components/WorkList";
 
 export default function Work() {
-  // const seasons = [2020, 2021];
-  const [year, setYear] =useState(2017);
+  const [year, setYear] = useState(2017);
+  const [choice, setChoice] = useState(2017);
+  const [isShow, setIsShow] = useState(false);
 
   const handleChange = useCallback((e) => {
-    setYear(e.target.value);
-  },[])
+    setChoice(e.target.value);
+  }, []);
+
+  const handleDisplay = useCallback(() => {
+    setYear(choice);
+    setIsShow(true);
+  }, [choice]);
 
   return (
     <div className={styles.container}>
       <Header />
       <main className={styles.main}>
-        {/* <div className={styles.grid}>
-          {seasons.map((season) => {
-            return (
-              <Link href="/works" key={season}>
-                <a className={styles.card}>{season} season</a>
-              </Link>
-            )
-          })}
-        </div> */}
         <div className={styles.select}>
-          <select className={styles.selectYear} value={year} onChange={handleChange}>
+          <select
+            className={styles.selectYear}
+            value={choice}
+            onChange={handleChange}
+          >
             <option value="2017">2017</option>
             <option value="2018">2018</option>
             <option value="2019">2019</option>
           </select>
-          {/* おそらくこれでは、prefetch機能が効かない（getStaticPropsを使う?) */}
-          <Link href={{
-            pathname: "work/[year]",
-            query: {year: year},
-            }}>
-            <a>Click Here</a>
-          </Link>
+          <button onClick={handleDisplay}>Show</button>
         </div>
+        {isShow ? <WorkList year = {year}/> : null}
       </main>
-      <Footer />
     </div>
   );
 }
