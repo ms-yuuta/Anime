@@ -12,7 +12,11 @@ All those involved in anime.
 - [Vercel](https://vercel.com/docs)
 
 ## 課題
-- スマホでは、デフォルトでポップアップがブロックされている。
-- データセットを違うファイルで管理して、Mainのファイルでimportする方法を見つける。
+- [x] json形式のデータセットを、別ファイルでimportする。
+- [x] APIの導入
+- [x] LPの作成
+- [ ] スマホでは、デフォルトでポップアップがブロックされている。
+- [ ] アニメをシーズン別でも表示できるようにする。
+- [ ] レスポンシブデザインに対応
 
-## beta coming soon....
+## v0 coming soon....
