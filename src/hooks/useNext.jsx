@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import dataset from "src/dataset.json";
-import URL from "src/URL.json"
+import dataset from "src/Dataset/dataset.json";
+import URL from "src/Dataset/URL.json"
 
 export const useNext = () => {
   const [sections, setSections] = useState(dataset);
