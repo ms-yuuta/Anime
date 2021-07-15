@@ -18,7 +18,7 @@ export const Quote = () => {
     <div className={styles.quote}>
       <h1>{quote.quote}</h1>
       <p className={styles.quoteInfo}>
-        {"chara : " + quote.character + ","} {"title : " + quote.anime}
+        {"chara : " + quote.character + ","} <span>{" "}</span> {"title : " + quote.anime}
       </p>
     </div>
   );
