@@ -1,15 +1,23 @@
 import styles from "src/styles/Work.module.css";
 import { useCallback, useState } from "react";
 
-export const SelectedYear = (props) => {
-  const [choice, setChoice] = useState(2014);
+export const Selected = (props) => {
+  const [choice, setChoice] = useState({ year: 2014, season: "spring" });
 
   const handleChange = useCallback((e) => {
-    setChoice(e.target.value);
+    if (isNaN(e.target.value)) {
+      setChoice((prevObj) => {
+        return { year: prevObj.year, season: e.target.value };
+      });
+    } else {
+      setChoice((prevObj) => {
+        return { year: e.target.value, season: prevObj.season };
+      });
+    }
   }, []);
 
   const handleDisplay = useCallback(() => {
-    props.setYear(choice);
+    props.setObj(choice);
     props.setIsShow(true);
   }, [choice]);
 
@@ -17,7 +25,7 @@ export const SelectedYear = (props) => {
     <div className={styles.select}>
       <select
         className={styles.selectYear}
-        value={choice}
+        value={choice.year}
         onChange={handleChange}
       >
         <option value="2014">2014</option>
@@ -29,9 +37,19 @@ export const SelectedYear = (props) => {
         <option value="2020">2020</option>
         <option value="2021">2021</option>
       </select>
+      <select
+        className={styles.selectYear}
+        value={choice.season}
+        onChange={handleChange}
+      >
+        <option value="spring">spring</option>
+        <option value="summer">summer</option>
+        <option value="autumn">autumn</option>
+        <option value="winter">winter</option>
+      </select>
       <button className={styles.button} onClick={handleDisplay}>
         Show
       </button>
     </div>
   );
-}
+};

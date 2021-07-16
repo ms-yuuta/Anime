@@ -9,9 +9,11 @@
 }
 
 .twitter {
+  display: inline-block;
+  padding: 0.3rem;
   background-color: rgb(136, 199, 255);
-  border-radius: 5px;
-  color: azure;
+  border-radius: 6px;
+  color: white;
 }
 
 .wordPage {
@@ -19,6 +21,18 @@
 }
 
 .titles {
-  display: inline-block;
   width: 550px;
+}
+
+.order {
+  list-style: none;
+}
+
+.list {
+  padding: 2rem;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
 }

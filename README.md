@@ -4,10 +4,11 @@ All those involved in anime.
 
 ## tool紹介
 #### front
+- React
 - [Next.js](https://nextjs.org/)
 #### API
 - [Animechan](https://animechan.vercel.app/)
-- [秋葉原IT戦略研究所](http://akibalab.info/)
+- [Annict] (https://annict.jp/)
 #### deploy
 - [Vercel](https://vercel.com/docs)
 
@@ -15,8 +16,8 @@ All those involved in anime.
 - [x] json形式のデータセットを、別ファイルでimportする。
 - [x] APIの導入
 - [x] LPの作成
+- [x] アニメをシーズン別でも表示できるようにする。
 - [ ] スマホでは、デフォルトでポップアップがブロックされている。
-- [ ] アニメをシーズン別でも表示できるようにする。
 - [ ] レスポンシブデザインに対応
 
 ## v0 coming soon....
