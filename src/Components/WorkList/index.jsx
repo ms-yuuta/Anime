@@ -10,8 +10,10 @@ export const WorkList = (props) => {
       "https://api.annict.com/v1/works?access_token=OLqCiKkm71T6dgIAUfIVzcoKKy81G7S2Tq42gIWKNYg&filter_season=" +
         props.obj.year +
         "-" +
-        props.obj.season +"&page=1"
+        props.obj.season +
+        "&page=1&sort_watchers_count=desc"
     );
+
     const json = await res.json();
     setWorks(json.works);
   }, [props.obj]);
@@ -26,20 +28,29 @@ export const WorkList = (props) => {
     <div className={styles.container}>
       <Header />
       <div className={styles.workPage}>
-        <h2>{props.obj.year} {props.obj.season}-season</h2>
+        <h2>
+          {props.obj.year} {props.obj.season}-season
+        </h2>
         <p>total: {works.length}</p>
         <ol className={styles.order}>
           {works.map((work) => {
             return (
               <li key={work.id} className={styles.list}>
-                <a
-                  className={styles.titles}
-                  href={work.official_site_url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {work.title}
-                </a>
+                <img
+                  src={work.images.recommended_url}
+                  height="30%"
+                  width="30%"
+                  alt="No image"
+                ></img>
+                <div className={styles.titles}>
+                  <a
+                    href={work.official_site_url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {work.title}
+                  </a>
+                </div>
                 <a
                   href={"https://twitter.com/" + work.twitter_username}
                   className={styles.twitter}

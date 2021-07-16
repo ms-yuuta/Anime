@@ -22,6 +22,7 @@
 
 .titles {
   width: 550px;
+  padding-left: 1.5rem;
 }
 
 .order {
@@ -35,4 +36,10 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  max-width: 1000px;
+}
+
+.list:hover {
+  cursor: pointer;
+  border: 1px solid #0070f3;
 }
