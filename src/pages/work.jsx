@@ -11,8 +11,8 @@ export default function Work() {
   return (
     <div className={styles.container}>
       <Header />
+      <Selected setObj={setObj} setIsShow={setIsShow} />
       <main className={styles.main}>
-        <Selected setObj={setObj} setIsShow={setIsShow} />
         {isShow ? <WorkList obj={obj} /> : null}
       </main>
     </div>

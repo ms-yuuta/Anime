@@ -31,7 +31,7 @@ export const WorkList = (props) => {
         <h2>
           {props.obj.year} {props.obj.season}-season
         </h2>
-        <p>total: {works.length}</p>
+        {/* <p>{works.length} works</p> */}
         <ol className={styles.order}>
           {works.map((work) => {
             return (
