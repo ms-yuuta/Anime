@@ -6,8 +6,7 @@ export const Choices = (props) => {
       {props.answers.map((item) => {
         return (
           <a
-            key={item.title}
-            id={item.id}
+            key={item.id}
             className={styles.card}
             onClick={(e) => {
               props.displayNext(e, item);

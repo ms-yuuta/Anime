@@ -8,17 +8,45 @@
   /* height: 100vh; */
 }
 
-.twitter {
-  background-color: rgb(136, 199, 255);
-  border-radius: 5px;
-  color: azure;
+.url {
+  display: inline-block;
+  width: 250px;
+  padding: 1rem;
+  margin: 0.5rem 0px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
 }
+
+.url:hover {
+  cursor: pointer;
+  border: 1px solid #0070f3;
+}
+
 
 .wordPage {
   min-height: 80vh;
 }
 
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .titles {
-  display: inline-block;
   width: 550px;
+  padding-left: 1.5rem;
+}
+
+.order {
+  list-style: none;
+}
+
+.list {
+  padding: 2rem;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
 }
