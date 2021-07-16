@@ -11,7 +11,7 @@ export const WorkList = (props) => {
         props.obj.year +
         "-" +
         props.obj.season +
-        "&page=1&sort_watchers_count=desc"
+        "&page=1&sort_watchers_count=desc&per_page=50"
     );
 
     const json = await res.json();
@@ -40,10 +40,11 @@ export const WorkList = (props) => {
                   src={work.images.recommended_url}
                   height="30%"
                   width="30%"
-                  alt="No image"
+                  alt="No image..."
                 ></img>
                 <div className={styles.titles}>
                   <a
+                    className={styles.title}
                     href={work.official_site_url}
                     target="_blank"
                     rel="noreferrer"
@@ -51,14 +52,24 @@ export const WorkList = (props) => {
                     {work.title}
                   </a>
                 </div>
-                <a
-                  href={"https://twitter.com/" + work.twitter_username}
-                  className={styles.twitter}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Twitter
-                </a>
+                <div>
+                  <a
+                    className={styles.url}
+                    href={work.official_site_url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Official Site →
+                  </a>
+                  <a
+                    href={"https://twitter.com/" + work.twitter_username}
+                    className={styles.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Twitter →
+                  </a>
+                </div>
               </li>
             );
           })}

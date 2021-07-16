@@ -8,16 +8,28 @@
   /* height: 100vh; */
 }
 
-.twitter {
+.url {
   display: inline-block;
-  padding: 0.3rem;
-  background-color: rgb(136, 199, 255);
+  width: 250px;
+  padding: 1rem;
+  margin: 0.5rem 0px;
+  border: 1px solid #eaeaea;
   border-radius: 6px;
-  color: white;
 }
+
+.url:hover {
+  cursor: pointer;
+  border: 1px solid #0070f3;
+}
+
 
 .wordPage {
   min-height: 80vh;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .titles {
@@ -37,9 +49,4 @@
   display: flex;
   align-items: center;
   max-width: 1000px;
-}
-
-.list:hover {
-  cursor: pointer;
-  border: 1px solid #0070f3;
 }
