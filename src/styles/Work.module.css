@@ -32,44 +32,6 @@
   width: 550px;
 }
 
-
-.select {
-  max-width: 200px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.selectYear {
-  border: 1.5px solid #eaeaea;
-  border-radius: 10px;
-  padding: 0px 20px;
-  height: 40px;
-  width: 120px;
-  margin-right: 2rem;
-}
-
-.selectYear:hover {
-  cursor: pointer;
-}
-
-.button {
-  border: 1.5px solid #eaeaea;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  height: 40px;
-  padding: 0px 30px;
-  width: 120px;
-}
-
-.button:hover {
-  cursor: pointer;
-  color: #0070f3;
-  border: 1.5px solid #0070f3;
-}
-
 /* .grid {
   display: flex;
   align-items: center;

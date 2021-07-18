@@ -1,4 +1,4 @@
-import styles from "src/styles/Work.module.css";
+import styles from "src/Components/Selected/Selected.module.css";
 import { useCallback, useState } from "react";
 
 export const Selected = (props) => {
