@@ -1,10 +1,36 @@
 import styles from "src/Components/Quote/Quote.module.css";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useReducer } from "react";
+
+const initialState = {
+  quote: {},
+  loading: true,
+  error: null,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "end": {
+      return {
+        ...state,
+        quote: action.data,
+        loading: false,
+      };
+    }
+    case "error": {
+      return {
+        ...state,
+        loading: false,
+        error: action.error,
+      };
+    }
+    default: {
+      throw new Error("such type is none!");
+    }
+  }
+};
 
 export const Quote = () => {
-  const [quote, setQuote] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const getFamousQuote = useCallback(async () => {
     try {
@@ -13,35 +39,39 @@ export const Quote = () => {
         throw new Error("エラーが発生したため、データの取得に失敗しました");
       }
       const json = await res.json();
-      setQuote(json);
+      dispatch({ type: "end", data: json });
     } catch (error) {
-      setError(error);
+      dispatch({ type: "error", error });
     }
-    setLoading(false);
   }, []);
 
   useEffect(() => {
     getFamousQuote();
   }, []);
 
-  if (loading) {
-    return <h1>4animater....</h1>;
+  if (state.loading) {
+    return (
+      <div>
+        <h1>4animater....</h1>
+        <p>now,loading</p>
+      </div>
+    );
   }
 
-  if (error) {
-    return <div>{error.message}</div>;
+  if (state.error) {
+    return <div>{state.error.message}</div>;
   }
 
-  if (quote.anime === undefined) {
+  if (state.quote.anime === undefined) {
     return <div>No data</div>;
   }
 
   return (
     <div className={styles.quote}>
-      <h1>{quote.quote}</h1>
+      <h1>{state.quote.quote}</h1>
       <p className={styles.quoteInfo}>
-        {"chara : " + quote.character + ","} <span> </span>{" "}
-        {"title : " + quote.anime}
+        {"chara : " + state.quote.character + ","} <span> </span>{" "}
+        {"title : " + state.quote.anime}
       </p>
     </div>
   );
