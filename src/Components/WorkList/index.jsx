@@ -14,7 +14,7 @@ export const WorkList = (props) => {
           props.obj.year +
           "-" +
           props.obj.season +
-          "&page=1&sort_watchers_count=desc&per_page=50"
+          "&page=1&sort_watchers_count=desc&per_page=25"
       );
       if (!res.ok) {
         console.log("データの取得失敗");
