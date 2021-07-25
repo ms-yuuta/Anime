@@ -1,28 +1,9 @@
-import useSWR from "swr";
+import { useQuote } from "src/hooks/useQuote";
 import styles from "src/Components/Quote/Quote.module.css";
-
-const fetcher = async (url) => {
-  const response = await fetch(url)
-  if(!response.ok) {
-    throw new Error("エラー")
-  }
-  const json = await response.json();
-  return json;
-}
-
-const useQuote = () => {
-  const { data, error } = useSWR("https://animechan.vercel.app/api/random", fetcher);
-
-  return {
-    data,
-    error,
-    isLoading: !data && !error,
-  };
-};
 
 export const Quote = () => {
   const { data, isLoading, error } = useQuote();
-  console.log({data, error})
+  console.log({ data, error });
 
   if (isLoading) {
     return <div>Now Loading....</div>;

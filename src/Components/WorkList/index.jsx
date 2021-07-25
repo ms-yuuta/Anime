@@ -1,38 +1,11 @@
+import { useWorks } from "src/hooks/useWorks";
 import styles from "src/Components/WorkList/WorkList.module.css";
 import { Header } from "src/Components/Common/Header";
-import { useCallback, useEffect, useState } from "react";
 
 export const WorkList = (props) => {
-  const [works, setWorks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { works, error, isLoading } = useWorks(props);
 
-  const getWork = useCallback(async () => {
-    try {
-      const res = await fetch(
-        "https://api.annict.com/v1/works?access_token=OLqCiKkm71T6dgIAUfIVzcoKKy81G7S2Tq42gIWKNYg&filter_season=" +
-          props.obj.year +
-          "-" +
-          props.obj.season +
-          "&page=1&sort_watchers_count=desc&per_page=25"
-      );
-      if (!res.ok) {
-        console.log("データの取得失敗");
-        throw new Error("データの取得に失敗しました。");
-      }
-      const json = await res.json();
-      setWorks(json.works);
-    } catch (error) {
-      setError(error);
-    }
-    setLoading(false);
-  }, [props.obj]);
-
-  useEffect(() => {
-    getWork();
-  }, [props.obj]);
-
-  if (loading) {
+  if (isLoading) {
     return <h2>now loading...</h2>;
   }
 
@@ -97,7 +70,6 @@ export const WorkList = (props) => {
           </ol>
         </div>
       </div>
-      )
     </div>
   );
 };
