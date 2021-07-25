@@ -2,7 +2,14 @@
   max-width: 1000px;
 }
 
-.quoteInfo {
+.quoteInfo p {
   font-size: larger;
   font-weight: 400;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .quote h1 {
+    font-size: 1.3rem;
+  }
 }

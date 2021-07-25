@@ -1,6 +1,5 @@
 import styles from "src/styles/Work.module.css";
 import { useState } from "react";
-import { Header } from "src/Components/Common/Header";
 import { Selected } from "src/Components/Selected";
 import { WorkList } from "src/Components/WorkList";
 
@@ -10,7 +9,6 @@ export default function Work() {
 
   return (
     <div className={styles.container}>
-      <Header />
       <Selected setObj={setObj} setIsShow={setIsShow} />
       <main className={styles.main}>
         {isShow ? <WorkList obj={obj} /> : null}
