@@ -3,7 +3,6 @@ import styles from "src/Components/Quote/Quote.module.css";
 
 export const Quote = () => {
   const { data, isLoading, error } = useQuote();
-  console.log({ data, error });
 
   if (isLoading) {
     return <div>Now Loading....</div>;
