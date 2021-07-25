@@ -1,8 +1,8 @@
 .header {
-  height: 100px;
+  height: 120px;
+  width: 100%;
   padding-left: 150px;
   border-bottom: 1px solid #eaeaea;
-  margin-bottom: 30px;
   display: flex;
   align-items: center;
 }
@@ -12,20 +12,12 @@
 }
 
 .logo {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .img {
   height: 1.6em;
   margin-right: 0.5rem;
-}
-
-.links {
-  font-weight: 400;
-  font-size: 1.2rem;
-  margin-left: 5rem;
-  display: flex;
-  align-items: center;
 }
 
 .nextVersion {
@@ -37,3 +29,16 @@
   border-radius: 10px;
 }
 
+.links {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .links {
+    display: none;
+  }
+}
