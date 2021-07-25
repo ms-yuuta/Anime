@@ -3,18 +3,14 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  /* height: 100vh; */
 }
 
 .main {
   min-height: 60vh;
-  /* min-width: 500px; */
   display: flex; 
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .twitter {
