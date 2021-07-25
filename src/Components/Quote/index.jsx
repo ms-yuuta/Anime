@@ -1,77 +1,43 @@
+import useSWR from "swr";
 import styles from "src/Components/Quote/Quote.module.css";
-import { useCallback, useEffect, useReducer } from "react";
 
-const initialState = {
-  quote: {},
-  loading: true,
-  error: null,
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "end": {
-      return {
-        ...state,
-        quote: action.data,
-        loading: false,
-      };
-    }
-    case "error": {
-      return {
-        ...state,
-        loading: false,
-        error: action.error,
-      };
-    }
-    default: {
-      throw new Error("such type is none!");
-    }
+const fetcher = async (url) => {
+  const response = await fetch(url)
+  if(!response.ok) {
+    throw new Error("エラー")
   }
+  const json = await response.json();
+  return json;
+}
+
+const useQuote = () => {
+  const { data, error } = useSWR("https://animechan.vercel.app/api/random", fetcher);
+
+  return {
+    data,
+    error,
+    isLoading: !data && !error,
+  };
 };
 
 export const Quote = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { data, isLoading, error } = useQuote();
+  console.log({data, error})
 
-  const getFamousQuote = useCallback(async () => {
-    try {
-      const res = await fetch("https://animechan.vercel.app/api/random");
-      if (!res.ok) {
-        throw new Error("エラーが発生したため、データの取得に失敗しました");
-      }
-      const json = await res.json();
-      dispatch({ type: "end", data: json });
-    } catch (error) {
-      dispatch({ type: "error", error });
-    }
-  }, []);
-
-  useEffect(() => {
-    getFamousQuote();
-  }, []);
-
-  if (state.loading) {
-    return (
-      <div>
-        <h1>4animater....</h1>
-        <p>now,loading</p>
-      </div>
-    );
+  if (isLoading) {
+    return <div>Now Loading....</div>;
   }
 
-  if (state.error) {
-    return <div>{state.error.message}</div>;
-  }
-
-  if (state.quote.anime === undefined) {
-    return <div>No data</div>;
+  if (error) {
+    return <div>{error.message}</div>;
   }
 
   return (
     <div className={styles.quote}>
-      <h1>{state.quote.quote}</h1>
+      <h1>{data.quote}</h1>
       <p className={styles.quoteInfo}>
-        {"chara : " + state.quote.character + ","} <span> </span>{" "}
-        {"title : " + state.quote.anime}
+        {"chara : " + data.character + ","} <span> </span>{" "}
+        {"title : " + data.anime}
       </p>
     </div>
   );
