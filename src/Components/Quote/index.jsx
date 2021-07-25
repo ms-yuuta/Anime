@@ -15,10 +15,10 @@ export const Quote = () => {
   return (
     <div className={styles.quote}>
       <h1>{data.quote}</h1>
-      <p className={styles.quoteInfo}>
-        {"chara : " + data.character + ","} <span> </span>{" "}
-        {"title : " + data.anime}
-      </p>
+      <div className={styles.quoteInfo}>
+        <p>{"chara : " + data.character + ","}</p>
+        <p>{"title : " + data.anime}</p>
+      </div>
     </div>
   );
 };

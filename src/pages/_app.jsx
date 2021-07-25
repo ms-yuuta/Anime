@@ -9,12 +9,8 @@ function MyApp({ Component, pageProps }) {
       <Header/>
       <Headline />
       <Component {...pageProps} />
-      <p>
-        <span className={styles.nextVersion}>v0</span> coming soon....
-      </p>
       <Footer />
     </>
   )
 }
-
 export default MyApp

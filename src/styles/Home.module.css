@@ -20,8 +20,12 @@
   text-align: center;
 }
 
-@media(max-width: 380px) {
+@media(max-width: 600px) {
   .intro {
     flex-direction: column;
+    margin-top: 2rem;
+  }
+  .principle {
+    margin: 0;
   }
 }

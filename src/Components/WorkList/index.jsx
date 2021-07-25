@@ -30,23 +30,16 @@ export const WorkList = (props) => {
             {works.map((work) => {
               return (
                 <li key={work.id} className={styles.list}>
-                  <img
-                    src={work.images.recommended_url}
-                    height="30%"
-                    width="30%"
-                    alt="No image..."
-                  ></img>
+                  <p className={styles.image}>
+                    <img
+                      src={work.images.recommended_url}
+                      alt=" No image..."
+                    ></img>
+                  </p>
                   <div className={styles.titles}>
-                    <a
-                      className={styles.title}
-                      href={work.official_site_url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {work.title}
-                    </a>
+                    <p className={styles.title}>{work.title}</p>
                   </div>
-                  <div>
+                  <div className={styles.links}>
                     <a
                       className={styles.url}
                       href={work.official_site_url}
