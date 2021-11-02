@@ -10,10 +10,10 @@ All those involved in anime.
 - [Next.js](https://nextjs.org/)
 #### API
 - [Animechan](https://animechan.vercel.app/)
-- [Annict] (https://annict.jp/)
+- [Annict](https://annict.jp/)
 #### deploy
 - [Vercel](https://vercel.com/docs)
-### Hooks library
+#### Hooks library
 - [SWR](https://swr.vercel.app/)
 
 ## 課題
