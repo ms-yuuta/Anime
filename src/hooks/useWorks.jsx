@@ -10,12 +10,14 @@ export const useWorks = (props) => {
     return json.works;
   };
 
-  const {data, error} = useSWR(
-    "https://api.annict.com/v1/works?access_token=OLqCiKkm71T6dgIAUfIVzcoKKy81G7S2Tq42gIWKNYg&filter_season=" +
-      props.obj.year +
-      "-" +
-      props.obj.season +
-      "&page=1&sort_watchers_count=desc&per_page=25",
+  const { data, error } = useSWR(
+    props.obj
+      ? `https://api.annict.com/v1/works?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&filter_season=` +
+          props.obj.year +
+          "-" +
+          props.obj.season +
+          "&page=1&sort_watchers_count=desc&per_page=25"
+      : null,
     fetcher
   );
 
