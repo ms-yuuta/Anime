@@ -3,11 +3,6 @@ import styles from "src/Components/Common/Headline/Headline.module.css";
 import Link from "next/link";
 
 export const Headline = () => {
-  const LINKS = [
-    { href: "/recommend", class: "", title: "character" },
-    // { href: "/work", class: styles.api, title: "Works" },
-  ];
-
   return (
     <header className={styles.header}>
       <span className={styles.img}>
@@ -21,13 +16,6 @@ export const Headline = () => {
       </p>
       <div className={styles.links}>
         <a href="https://animap.vercel.app/">AniMap</a>
-        {LINKS.map((link) => {
-          return (
-            <Link href={link.href} key={link.href}>
-              <a className={link.class}>{link.title}</a>
-            </Link>
-          );
-        })}
       </div>
     </header>
   );
