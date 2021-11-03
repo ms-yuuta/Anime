@@ -6,7 +6,6 @@ All those involved in anime.
 
 ## tool紹介
 #### front
-- React
 - [Next.js](https://nextjs.org/)
 #### API
 - [Annict](https://annict.jp/)
