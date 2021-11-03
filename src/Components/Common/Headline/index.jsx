@@ -10,9 +10,6 @@ export const Headline = () => {
       <Link href="/">
         <a>4animater</a>
       </Link>
-      <p>
-        <span>beta</span>
-      </p>
       <div>
         <a href="https://animap.vercel.app/">AniMap</a>
       </div>

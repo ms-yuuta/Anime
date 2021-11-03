@@ -1,4 +1,3 @@
-import { Quote } from "src/Components/Quote";
 import Image from "next/image";
 import useSWR from "swr";
 import client from "client";
@@ -31,7 +30,6 @@ export default function Index() {
           <p>Even if the universe ends, anime will continue to exist.</p>
         </div>
       </div>
-      <Quote />
     </div>
   );
 }
