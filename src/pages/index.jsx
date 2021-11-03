@@ -20,16 +20,5 @@ export default function Index() {
   if (!data) return <p>loading</p>;
   if (error) return <p>error</p>;
 
-  return (
-    <div>
-      Hello {data.viewer.username} !
-      <div >
-        <Image src="/jojos.jpg" alt="jojo image" height={510} width={825} />
-        <div>
-          <h1>Anime is our second home.</h1>
-          <p>Even if the universe ends, anime will continue to exist.</p>
-        </div>
-      </div>
-    </div>
-  );
+  return <div>Hello {data.viewer.username} !</div>;
 }
