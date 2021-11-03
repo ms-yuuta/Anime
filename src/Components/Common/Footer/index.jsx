@@ -1,9 +1,8 @@
 import Image from "next/image";
-import styles from "src/Components/Common/Footer/Footer.module.css";
 
 export const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer>
       <a
         href="https://note.com/jusho/n/nf90642b2c42f"
         target="_blank"

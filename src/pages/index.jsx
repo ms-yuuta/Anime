@@ -1,4 +1,3 @@
-import styles from "src/styles/Home.module.css";
 import { Quote } from "src/Components/Quote";
 import Image from "next/image";
 import useSWR from "swr";
@@ -23,11 +22,11 @@ export default function Index() {
   if (error) return <p>error</p>;
 
   return (
-    <div className={styles.container}>
+    <div>
       Hello {data.viewer.username} !
-      <div className={styles.intro}>
+      <div >
         <Image src="/jojos.jpg" alt="jojo image" height={510} width={825} />
-        <div className={styles.principle}>
+        <div>
           <h1>Anime is our second home.</h1>
           <p>Even if the universe ends, anime will continue to exist.</p>
         </div>
