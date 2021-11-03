@@ -1,10 +1,11 @@
 import styles from "src/styles/Home.module.css";
 import { Quote } from "src/Components/Quote";
 import Image from "next/image";
-import { gql, useQuery } from "@apollo/client";
+import useSWR from "swr";
+import client from "client";
 
-const QUERY = gql`
-  query {
+const query = `
+  {
     viewer {
       username
       name
@@ -12,12 +13,15 @@ const QUERY = gql`
   }
 `;
 
+const fetcher = (query, client) => {
+  return client.request(query);
+};
+
 export default function Index() {
-  const { data, loading, error } = useQuery(QUERY);
-  if (loading) return <p>loading</p>;
-  if (error) {
-    return <p>error</p>;
-  }
+  const { data, error } = useSWR([query, client], fetcher);
+  if (!data) return <p>loading</p>;
+  if (error) return <p>error</p>;
+
   return (
     <div className={styles.container}>
       Hello {data.viewer.username} !
