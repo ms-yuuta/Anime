@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export const Headline = () => {
   const LINKS = [
-    { href: "/recommend", class: "", title: "Recommend" },
-    { href: "/work", class: styles.api, title: "Works" },
+    { href: "/recommend", class: "", title: "character" },
+    // { href: "/work", class: styles.api, title: "Works" },
   ];
 
   return (
@@ -20,6 +20,7 @@ export const Headline = () => {
         <span className={styles.nextVersion}>beta</span>
       </p>
       <div className={styles.links}>
+        <a href="https://animap.vercel.app/">AniMap</a>
         {LINKS.map((link) => {
           return (
             <Link href={link.href} key={link.href}>
